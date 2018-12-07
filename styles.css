@@ -1,0 +1,118 @@
+html {
+  font-size: 3vmin;
+}
+
+em {
+  color: yellow;
+  font-style: normal;
+  font-weight: bold;
+}
+
+p strong,
+li strong {
+  color: white;
+
+}
+
+p {
+  font-size: 1rem;
+  margin-top: 0.3rem;
+  margin-bottom: 0.2rem;
+}
+
+H1 strong,
+H2 strong,
+H3 strong {
+  font-family: "Work Sans", sans-serif;
+  letter-spacing: 0.02em;
+  font-weight: 700;
+  font-style: normal;
+  color: white;
+  /* color: yellow; */
+}
+
+
+
+
+.source--root {
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 10px;
+  height: 0;
+  overflow: visible;
+}
+
+
+
+.layout-image h1,
+.layout-image h2,
+.layout-image h3 {
+  color: #0a0045;
+}
+
+.layout-image > div {
+  position: relative;
+  height: 100vh;
+  padding-right: 2rem;
+  padding-left: 2rem;
+}
+.layout-image > div img {
+  width: 100%;
+  height: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+
+}
+
+
+.video,
+iframe.browser {
+
+    width: 42rem;
+    height: 24rem;
+    background-color: white;
+
+}
+
+
+iframe.browser {
+
+  border: .2rem solid #666666;
+  border-top: 1rem solid #666666;
+}
+
+
+
+  .videoWrapper {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    height: 0;
+  }
+
+  .videoWrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    max-width: 100%;
+    max-height: 100%;
+  }
+
+
+
+
+.container .highlight {
+    color: yellow;
+}
+
+.container {
+    max-width: 30em;
+    height: 2em;
+    padding: 1.3em 0;
+    font-size: 3em;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 900;
+}
