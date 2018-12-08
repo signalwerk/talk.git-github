@@ -1,11 +1,17 @@
-import { Head } from 'mdx-deck'
+import { Head, Image } from 'mdx-deck'
+import { Notes } from 'mdx-deck'
 import Start from './src/Components/start'
+import Source from './src/Components/source'
+import Video from './src/Components/video'
 export theme from './src/theme'
+import Invert from './src/layouts/Invert'
+import ImgLayout from './src/layouts/image'
 
 
 <Head>
   <title>Web‑Worknights</title>
   <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,700,900" rel="stylesheet" />
+  <link href="./styles.css" rel="stylesheet" />
 </Head>
 
 
@@ -24,35 +30,244 @@ export default Start
 ![](//cdn.rawgit.com/signalwerk/talk.travis-ci/1991b0ef/img/header.png)
 
 ---
-### Meetup
+### **Meetup**
 # Web‑Worknights
 ---
 ## THX
-Schule für Gestaltung Zürich
+*Schule für Gestaltung Zürich*
 ---
 
 
 ## Stefan Huber
 
-<Notes>
-* Web-Bastler seit ~ 19 Jahr
-* Web-Entwickler seit ~ 13 Jahr
-</Notes>
-
-
 ---
+
 ## DANGER!
-Live-coding...
+live examples...
+
 ---
+## Übersicht
+
+* GIT & GitFlow
+* Github
+  * Reviews
+  * Integratoren
+  * CD & CI
+
+---
+## Versionsverwaltung
+
+* [Übersicht wer hat was gemacht?](https://github.com/reactjs/reactjs.org/blame/master/README.md)
+* [Wann wurde was gemacht?](https://github.com/reactjs/reactjs.org/commits/master/README.md)
+
+
+---
+## Welche Versionsverwaltung?
+
+* Früher CVS oder SVN
+* Heute meist GIT (oder sonst mercurial)
+
+
+---
+
+## Git
+
+
+
+* Linus Torvalds
+* 2005 entwickelt – GNU-Lizenz
+* Grundidee von BitKeeper (kommerziell)
+
+---
+
+export default ImgLayout
+
+# Object Storage
+
+
+<div style={{width: '50vw'}}/>
+
+
+![gitflow](./img/data-model-3.png)
+
+
+<Source>
+
+Bildquelle: [git-scm.com](https://git-scm.com/book/en/v2/Git-Internals-Git-Objects)
+
+</Source>
+---
+
+## Fork
+
+* Fork = Eine bestehende Version Ableiten
+* Fork war vor GIT eine Bedrohung – heute «life style»
+
+
+
+---
+# GitFlow
+
+---
+export default ImgLayout
+
+# Develop-Branch
+
+
+<div style={{width: '90vw'}}/>
+
 
 ![gitflow](./img/gitflow/02_develop.svg)
+
+
+<Source>
+
+Bildquelle: [atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+</Source>
+---
+
+export default ImgLayout
+
+# Feature-Branch
+
+
+<div style={{width: '90vw'}}/>
+
+
 ![gitflow](./img/gitflow/03_feature.svg)
-![gitflow](./img/gitflow/04_release.svg)
-![gitflow](./img/gitflow/05_hotfix.svg)
+
+
+<Source>
+
+Bildquelle: [atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+</Source>
 
 
 ---
 
+export default ImgLayout
+
+# Release-Branch
+
+
+<div style={{width: '90vw'}}/>
+
+
+![gitflow](./img/gitflow/04_release.svg)
+
+<Source>
+
+Bildquelle: [atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+</Source>
+
+---
+
+export default ImgLayout
+
+# Hotfix
+
+
+<div style={{width: '90vw'}}/>
+
+
+![gitflow](./img/gitflow/05_hotfix.svg)
+
+<Source>
+
+Bildquelle: [atlassian](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow)
+
+</Source>
+---
+## Github?
+* Anbieter: [github.com](https://github.com/)
+* Technologie: git
+
+
+---
+## Kosten
+
+* [Pricing](https://github.com/pricing)
+* [Education-Program](https://education.github.com/pack)
+
+---
+## Demo
+
+* [GitFlow](https://github.com/signalwerk/talk.git-github)
+
+---
+
+## Github – Dienste
+* Versionsverwaltung (git)
+* Wiki
+* Issues
+* Projektmanagement
+* ...
+---
+## Wiki
+
+* Markdown
+* für Bilder → Repo benutzen
+---
+## Issues
+
+* Dienen als zentrale Sammelstelle
+* Atomisierung der Probleme auf einzelne Issues
+---
+## Zuständigkeit & Review
+
+* Pull-Requests
+* [Review](https://help.github.com/articles/enabling-required-reviews-for-pull-requests/) einstellen unter `/settings/branches`
+
+---
+## Projektmanagement
+
+* Issues
+* Tags
+* Milestones
+* Projects
+
+
+---
+# CI & CD
+
+* Continuous integration → zurück auf master!
+* Continuous delivery → shipping!
+
+---
+# CD mit Travis
+
+
+
+<div style={{fontSize: '0.3em'}}>
+
+
+```yaml
+language: node_js
+node_js: stable
+install:
+  - npm ci
+script:
+  - npm run build
+deploy:
+  provider: pages
+  local-dir: ./dist
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN
+  on:
+    branch: master
+```
+
+</div>
+
+---
+
+# Integratoren
+
+
+---
 
 # Merci
 
@@ -62,8 +277,3 @@ Live-coding...
 ---
 
 ## exit 0;
-
-
-
-
-https://help.github.com/articles/enabling-required-reviews-for-pull-requests/
